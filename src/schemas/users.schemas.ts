@@ -5,9 +5,7 @@ const userSchema = z.object({
   id: z.number(),
   name: z.string(),
   email: z.string().email(),
-  password: z.string().transform((pass) => {
-    return hashSync(pass, 10);
-  }),
+  password: z.string().min(4),
   admin: z.boolean().optional(),
   active: z.boolean().optional(),
 });
