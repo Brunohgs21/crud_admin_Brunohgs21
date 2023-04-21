@@ -18,7 +18,7 @@ const ensureTokenIsValidMiddleware = async (
     if (err) {
       throw new AppError(err.message, 403);
     }
-    res.locals.admin = decoded.admin;
+    res.locals.user = decoded.user;
   });
 
   return next();

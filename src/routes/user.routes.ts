@@ -5,6 +5,7 @@ import ensureEmailExistsMiddleware from "../middlewares/ensureEmailExists.middle
 import {
   createUsersController,
   listUsersController,
+  retrieveUsersController,
 } from "../controllers/users.controllers";
 import ensureTokenIsValidMiddleware from "./../middlewares/ensureTokenIsValid.middleware";
 
@@ -18,5 +19,11 @@ userRoutes.post(
 );
 
 userRoutes.get("", ensureTokenIsValidMiddleware, listUsersController);
+
+userRoutes.get(
+  "/profile",
+  ensureTokenIsValidMiddleware,
+  retrieveUsersController
+);
 
 export default userRoutes;
