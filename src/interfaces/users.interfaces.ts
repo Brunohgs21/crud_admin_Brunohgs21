@@ -1,5 +1,6 @@
-import { z } from "zod";
+import { TypeOf, z } from "zod";
 import {
+  authSchema,
   requestUserSchema,
   responseUserSchema,
   updateUserSchema,
@@ -12,6 +13,8 @@ type TUserRequest = z.infer<typeof requestUserSchema>;
 
 type TUserResponse = z.infer<typeof responseUserSchema>;
 
+type TUserAuth = z.infer<typeof authSchema>;
+
 type TUserUpdateRequest = z.infer<typeof updateUserSchema>;
 
-export { TUser, TUserRequest, TUserResponse, TUserUpdateRequest };
+export { TUser, TUserRequest, TUserResponse, TUserUpdateRequest, TUserAuth };
