@@ -33,7 +33,6 @@ const createSessionService = async (
   if (comparePassword === false) {
     throw new AppError("Wrong email/password", 401);
   }
-  console.log(user, "login");
 
   const token: string = jwt.sign(
     {

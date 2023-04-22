@@ -32,7 +32,6 @@ const retrieveUsersController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  console.log(res.locals);
   const user = await retrieveUsersService(res.locals.id);
 
   return res.json(user);
@@ -66,7 +65,6 @@ const reactivateUserController = async (
   const userId: number = parseInt(req.params.id);
 
   const recoveredUser = await reactivateUserService(userId);
-  console.log(recoveredUser);
 
   return res.json(recoveredUser);
 };

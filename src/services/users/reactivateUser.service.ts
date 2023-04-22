@@ -21,7 +21,6 @@ const reactivateUserService = async (
   const queryResult: QueryResult<TUserResponse> = await client.query(
     queryConfig
   );
-  console.log(queryResult.rows[0]);
 
   return queryResult.rows[0];
 };

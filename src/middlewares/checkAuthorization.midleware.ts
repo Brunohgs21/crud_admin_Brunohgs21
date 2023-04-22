@@ -2,21 +2,13 @@ import { Request, Response, NextFunction } from "express";
 import { AppError } from "../error";
 import { QueryConfig } from "pg";
 import { client } from "../database";
-import { TUserAuth } from "../interfaces/users.interfaces";
 
 const checkAuthorizationMiddleware = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  // console.log(res.locals);
-  // const user: TUserAuth = res.locals.user;
-  // console.log(user);
-  const tokenId = res.locals.id;
-  console.log(tokenId);
-
   const admin: boolean = res.locals.admin;
-  console.log(admin);
 
   const userId: number = parseInt(req.params.id);
   const queryTest: string = `

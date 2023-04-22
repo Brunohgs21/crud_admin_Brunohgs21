@@ -1,6 +1,5 @@
 import { QueryConfig } from "pg";
-import { TUser, TUserResponse } from "../../interfaces/users.interfaces";
-import { responseUserSchema } from "../../schemas/users.schemas";
+import { TUserResponse } from "../../interfaces/users.interfaces";
 import { client } from "../../database";
 
 const retrieveUsersService = async (userId: number): Promise<TUserResponse> => {

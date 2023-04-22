@@ -1,4 +1,4 @@
-import { QueryConfig, QueryResult } from "pg";
+import { QueryResult } from "pg";
 import "dotenv/config";
 import { TUserResponse } from "../../interfaces/users.interfaces";
 import { client } from "../../database";
