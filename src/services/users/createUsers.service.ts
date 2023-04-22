@@ -9,6 +9,9 @@ const createUsersService = async (
   userData: TUserRequest
 ): Promise<TUserResponse> => {
   userData.password = await bcrypt.hash(userData.password, 10);
+  if (!userData.admin) {
+    userData.admin = false;
+  }
   const queryString: string = format(
     `
             INSERT INTO
